@@ -7,3 +7,4 @@ streamlit-aggrid
 pandas_profiling
 streamlit_pandas_profiling
 sweetviz
+requests
