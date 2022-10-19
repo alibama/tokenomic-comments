@@ -28,4 +28,21 @@ st.subheader('Exploratory Data Analysis with Streamlit')
 
 st.markdown('In this app we are using content pulled from the [tokenomic comments](https://tokenomics.aragond.tech) with a small Python script')
 df = pd.read_json('https://tokenomics.aragond.tech/topics.json?_format=json')
+
+def main():
+	if st.button("Generate Sweetviz Report"):
+		report = sv.analyze(df)
+		report.show_html()
+		st_display_sweetviz("SWEETVIZ_REPORT.html")
+
+
+#dfdata = dfdata[dfdata['cited'] >= citations] 
+#dfdata['doi'] = dfdata['doi'].astype(str)  #pandas was calling this a mixed type column and it borked sweetviz
+#dfdata['aff'] = dfdata['aff'].astype(str)  #pandas was calling this a mixed type column and it borked sweetviz
+#dfdata
+df.to_csv('opendata.csv', index=False)
 st.write(df)
+        
+
+if __name__ == '__main__':
+	main()
