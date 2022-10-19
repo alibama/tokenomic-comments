@@ -28,4 +28,4 @@ st.subheader('Exploratory Data Analysis with Streamlit')
 
 st.markdown('In this app we are using content pulled from the [tokenomic comments](https://tokenomics.aragond.tech) with a small Python script')
 df = pd.read_json('https://tokenomics.aragond.tech/topics.json?_format=json')
-print(df)
+st.write(df)
