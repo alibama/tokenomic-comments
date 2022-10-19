@@ -31,8 +31,6 @@ st.markdown('In this app we are using content pulled from the [tokenomic comment
 @st.cache(suppress_st_warning=True)
 
 
-import requests
-
 resp = requests.get('https://tokenomics.aragond.tech/topics.json?_format=json')
 txt = resp.json()
 df=pd.DataFrame(txt)
