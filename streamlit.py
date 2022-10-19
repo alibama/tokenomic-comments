@@ -35,7 +35,10 @@ def main():
 		report.show_html()
 		st_display_sweetviz("SWEETVIZ_REPORT.html")
 
-
+def st_display_sweetviz(report_html,width=1000,height=500):
+	report_file = codecs.open(report_html,'r')
+	page = report_file.read()
+	components.html(page,width=width,height=height,scrolling=True)
 #dfdata = dfdata[dfdata['cited'] >= citations] 
 #dfdata['doi'] = dfdata['doi'].astype(str)  #pandas was calling this a mixed type column and it borked sweetviz
 #dfdata['aff'] = dfdata['aff'].astype(str)  #pandas was calling this a mixed type column and it borked sweetviz
