@@ -29,6 +29,6 @@ st.subheader('Exploratory Data Analysis with Streamlit')
 st.markdown('In this app we are using content pulled from the [tokenomic comments](https://tokenomics.aragond.tech) with a small Python script')
 
 @st.cache(suppress_st_warning=True)
-resp = requests.get('https://tokenomics.aragond.tech/topics.json?_format=json', timeout=10,headers={'Content-Type': 'application/json'})
+resp = requests.get('https://tokenomics.aragond.tech/topics.json?_format=json')
 df= pd.read_json(resp.text)
 print(df)
